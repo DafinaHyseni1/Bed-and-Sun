@@ -8,6 +8,7 @@ body, html {
     font-family: Verdana (sans-serif)  ;
     overflow-x: hidden;
     background: rgba(250, 249, 242, 0.9);
+    
 }
 
 /* Hero Section */
@@ -130,6 +131,35 @@ body, html {
     width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+    .background-section {
+        height: 40vh; /* Pak më e madhe për ekran të vogël */
+        margin-left: 0; /* Hiq margjinat që të zgjerohet plotësisht */
+        margin-right: 0;
+        width: 100%; /* Siguron që mbulon të gjithë ekranin */
+        background-size: cover; /* Siguron që fotoja mbush gjithë hapësirën */
+    }
+
+    .animated-header {
+        padding: 5px 10px; /* Zvogëlon padding për më shumë hapësirë */
+    }
+
+    .animated-nav {
+        margin-top: -100px;
+        display: flex;
+        flex-direction: row; /* Siguron që të mbetet horizontal */
+        justify-content: center;
+        align-items: center;
+        gap: 10px; /* Zvogëlon hapësirën mes linkeve */
+        flex-wrap: wrap; /* Lejon që linket të përshtaten nëse nuk ka vend */
+    }
+
+    .nav-link {
+        font-size: 0.9rem; /* Zvogëlon madhësinë për pajisjet e vogla */
+        padding: 5px; /* Redukton hapësirën e brendshme */
+    }
+}
+
 /* About Section */
 .about-section {
     padding: 100px 40px;
@@ -199,6 +229,24 @@ body, html {
     transform: translateY(0); /* Pamja e menjëherëshme */
     transition: all 0.5s ease-out;
 }
+@media screen and (max-width: 768px) {
+    .about-section {
+        padding: 80px 20px; /* Pak më pak padding për ekranet e vogla */
+    }
+
+    .about-title {
+        font-size: 1.4rem; /* Titulli pak më i vogël */
+    }
+
+    .about-description {
+        font-size: 1.3rem; /* Teksti pak më i vogël */
+    }
+
+    .about-image {
+        height: 350px; /* Rritja e madhësisë së fotos */
+        width: 90%; /* Fotoja të marrë më shumë hapësirë */
+    }
+}
 
 /* Blog Section */
 .blog-section {
@@ -209,10 +257,13 @@ body, html {
 
 .blog-title {
     font-size: 2.8rem;
-    color: #c49e85;
+    color:#c59574;
     font-weight: bold;
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    opacity: 1; /* Shfaqet menjëherë */
+    transform: translateY(0); /* Pamja e menjëherëshme */
+    transition: all 0.5s ease-out;
 }
 
 .blog-grid {
@@ -251,13 +302,14 @@ body, html {
 }
 
 .blog-post-title {
-    font-size: 1.6rem;
-    color: #c49e85;
-    margin-top: 20px;
-    flex-grow: 1; /* Rritet nëse ka hapësirë të lirë */
-    overflow: hidden; /* Parandalon që titulli të dalë jashtë */
-    text-overflow: ellipsis; /* Përdor tri pikë për titujt që janë shumë të gjatë */
-    white-space: nowrap; /* Nuk lejon që teksti të thyehet në linja të reja */
+    font-size: 2.8rem;
+    color:#c59574;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    opacity: 1; /* Shfaqet menjëherë */
+    transform: translateY(0); /* Pamja e menjëherëshme */
+    transition: all 0.5s ease-out;
 }
 
 .blog-summary {
@@ -337,8 +389,34 @@ body, html {
    margin-top: 10px;
 
 }
-/* Shop Section */
-/* Shop Section */
+@media screen and (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 postime për rresht */
+    }
+    
+    .blog-title {
+        font-size: 1.6rem; /* Zvogëlim i titullit */
+    }
+
+    .blog-post-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 postim për rresht */
+    }
+
+    .blog-title {
+        font-size: 1rem;
+    }
+
+    .blog-summary {
+        font-size: 1rem;
+    }
+}
+
    /* Shop Grid Layout */
    .shop-grid {
     display: grid;
@@ -424,9 +502,20 @@ body, html {
 }
 
 
+@media screen and (max-width: 768px) {
+    .shop-title {
+        font-size: 1rem;
+    }
+    .shop-grid {
+        grid-template-columns: repeat(2, minmax(150px, 1fr)); /* 2 kolona për ekranet e vogla */
+        gap: 20px; /* Hapësirë më e vogël për ekranet e vogla */
+    }
+}
+
 
 /* Contact Section */
 .contact-section {
+    clear: both;
     padding: 80px 40px;
     text-align: center;
     background: rgba(250, 249, 242, 0.9);
@@ -507,7 +596,11 @@ body, html {
     cursor: pointer;
 }
 
-.contact-form button:hover {
-    background-color: #9c6f4f;
-}
 
+/* For screens smaller than 768px, further adjust layout */
+@media screen and (max-width: 768px) {
+    .contact-title {
+        font-size: 1.2rem; /* Smaller title on small screens */
+    }
+
+}
