@@ -132,6 +132,9 @@ body, html {
 }
 
 @media screen and (max-width: 768px) {
+    .tagline { 
+        margin-bottom: 100px;
+    }
     .background-section {
         height: 40vh; /* Pak më e madhe për ekran të vogël */
         margin-left: 0; /* Hiq margjinat që të zgjerohet plotësisht */
